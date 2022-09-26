@@ -50,9 +50,14 @@ while 1:
             pg.moveTo(cx, cy)
         px,py = cx,cy
 
+    Key = cv2.waitKey(1) & 0xFF
+    if Key == 27:
+        break   
+    elif Key == ord('r'):
+        firstRun=True
     cv2.imshow('Output',img)
-    if cv2.waitKey(1)==27:
-        break
+   
 
+    
 cap.release()
 cv2.destroyAllWindows()
